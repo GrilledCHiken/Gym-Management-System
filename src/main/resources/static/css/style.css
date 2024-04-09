@@ -1,0 +1,206 @@
+body{
+
+    background:  lightgray/* #dbeed7 #23352D!important;*/
+
+}
+
+.bg-primary {
+
+    background: #e2e2e2!important; /* #e2e2e2 #212F1E!important;*/
+
+}
+
+
+.banner{
+    width: 100%;
+    /*for any picture to add*/
+    height: 93vh;
+    /* 	background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url();
+     */	background-size:cover;
+    color: lightgray;
+
+
+}
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.my-card{
+    padding:10px;
+    background:lightgray;
+
+
+}
+
+
+#login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 420px;
+    border: 1px solid #9C9C9C;
+    background-color: white;
+}
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+
+
+.bg-secondary{
+
+    background-color: #4169E2;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.space {
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+}
+
+/*Navbar*/
+
+.home-page {
+    background-color: #4169E2;
+}
+.navbar-custom {
+    background-color: #242b33;
+    border: 1px solid white;
+}
+
+
+
+/*Sidebar style*/
+
+@media only screen and (max-width: 600px){
+    .sidebar{
+        display: none;
+        width: 80% !important;
+        background: white;
+        height: 100vh;
+        position: fixed;
+        padding-top: 20px;
+
+    }
+    .content{
+        margin-left: 0 !important;
+
+    }
+}
+.sidebar{
+    width: 20%;
+    background: #242b33;
+    height: 100%;
+    position: fixed;
+    padding-top: 45px;
+    z-index: 9999999999999999999999999999999999999;
+    border: 1px solid white;
+}
+.sidebar a{
+    display: block;
+    width: 100%;
+    padding: 10px 25px;
+    color: rgb(128, 128, 128);
+    text-decoration: none;
+}
+.sidebar a:hover{
+    background: lightgray;
+}
+.sidebar .crossBtn{
+    position: absolute;
+    top: 0;
+
+    right: 10px;
+    font-size: 36px;
+    cursor: pointer;
+
+}
+.sidebar .divider{
+    height: 1px;
+    width: 100%;
+    background: #242b33;
+    margin-top: 10px;
+}
+/* Sidebar End */
+
+
+/*Content style*/
+.content{
+    margin-left: 20%;
+
+}
+.my-profile-picture{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* border: 1px solid black;*/
+}
+/*Search css*/
+.search-container{
+    position: relative;
+
+}
+.search-result{
+    position: absolute;
+    background: white;
+    width: 100%;
+    padding: 10px;
+    /*border: 1px solid gray;*/
+    display: none;
+}
+
+.active{
+    background: #4169E2 !important;
+    color: white !important;
+}
+.top{
+    background: #242b33 !important;
+    color: white !important;
+}
+.logo-bg {
+    background-color: black;
+    padding: 15px;
+    border-radius: 7px;
+
+
+}
+
+
+
+.active-info {
+    text-align: center;
+}
+
+.active-members {
+    background-color: #007bff; /* Blue color for active members */
+    color: white;
+    padding: 25px 50px;
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.active-staffs {
+    background-color: #28a745; /* Green color for current staff */
+    color: white;
+    padding: 25px 50px;
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 24px;
+    display: inline-block;
+}

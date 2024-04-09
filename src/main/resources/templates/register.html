@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{loginbase::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Registration</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<section>
+    <div id="registration">
+        <div class="container">
+            <div id="registration-row" class="row justify-content-center align-items-center" style="min-height: 90vh;">
+                <div id="registration-column" class="col-md-6">
+                    <div id="registration-box" class="col-md-12 p-4" style="border: 1px solid #ccc; background-color: white; margin-top: -30px;">
+                        <form id="registration-form" class="form" th:action="@{/register}"
+                              method="post" th:object="${admin}">
+                            <h3 class="text-center">REGISTRATION</h3>
+
+                            <div class="form-group mb-3">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName"
+                                       th:field="*{firstName}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName"
+                                       th:field="*{lastName}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mobileNumber">Mobile Number:</label>
+                                <input type="text" class="form-control" id="mobileNumber" name="mobileNumber"
+                                       th:field="*{mobileNumber}" required>
+                                <small class="text-danger" th:if="${#fields.hasErrors('mobileNumber')}" th:errors="*{mobileNumber}"></small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       th:field="*{email}" required>
+                                <small class="text-danger" th:errors="*{email}"></small>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                       th:field="*{password}" required>
+                                <small class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password:</label>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}" required>
+                                <small class="text-danger" th:errors="*{confirmPassword}"></small>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <input type="submit" name="submit"
+                                       class="btn btn-info btn-md navbar-custom" value="Register" style="color: white;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

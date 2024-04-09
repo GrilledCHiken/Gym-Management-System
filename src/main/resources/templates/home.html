@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, admin-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title th:text="${title}">Home Page</title>
+
+
+
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("active");
+    }
+  </script>
+</head>
+
+<body>
+<section>
+ <div class="container">
+        <h1 class="text-center mt-3 text-secondary fst-italic">Welcome to Gym Management System</h1>
+        <div class="active-info">
+            <div class="active-members text-uppercase">Active Members: <span th:text="${activeMembersCount}">0</span></div>
+            <div class="active-staffs text-uppercase">Current Staff: <span th:text="${activeStaffsCount}">0</span></div>
+        </div>
+    </div>
+
+
+
+
+
+  <script>
+    $(document).ready(()=>{
+      $(".item").removeClass("active");
+      $("#home-link").addClass("active");
+    })
+  </script>
+
+</section>
+</body>
+</html>

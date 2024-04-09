@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout(content)">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <title th:text="${title}"></title>
+
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+
+
+    </style>
+    <style>
+
+        .logo-text {
+            margin: 0;
+        }
+
+        .logo-text:not(:last-child) {
+            margin-right: 700px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav
+        class="navbar fixed-top navbar-expand-lg navbar-dark bg-custom-primary navbar-custom">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/home}" href="#">
+
+            <span class="logo-text">Gym Management System</span>
+        </a>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
+
+            <li class="nav-item"><a class="nav-link top"
+                                    aria-current="page" th:href="@{/change-password}">Change Password</a></li>
+
+
+            <li class="nav-item"><a class="nav-link"
+                                    th:classappend="top" aria-current="page" th:href="@{/logout}">Logout</a></li>
+        </ul>
+    </div>
+
+</nav>
+<div class="sidebar mt-2" id="sidebar">
+    <a id="home-link" href="#" th:href="@{/home}" class="item"><i
+            class="fas fa-home"></i><b> Home</b> </a>
+    <a id="register-member" href="#" th:href="@{/register-member}" class="item"><i
+            class="fas fa-id-card-alt"></i><b> Add Member</b> </a>
+    <a id="member-list" href="#" th:href="@{/members}" class="item"><i
+            class="fas fa-user-circle"></i><b> Member List</b>  </a>
+    <a id="register-staff" href="#" th:href="@{/register-staff}" class="item"><i
+            class="fas fa-id-card-alt"></i><b> Add Staff</b> </a>
+    <a id="staff-list" href="#" th:href="@{/staffs}" class="item"><i
+            class="fas fa-user-circle"></i><b> Staff List</b>  </a>
+    <a id="equipment-list" href="#" th:href="@{/add-equipment}" class="item"><i
+            class="fas fa-id-card-alt"></i><b> Add Equipment</b>  </a>
+    <a id="view-equipment-list" href="#" th:href="@{/equipmentList}" class="item"><i
+            class="fas fa-id-card-alt"></i><b> Equipment List</b>  </a>
+<!--    <a id="add-book" href="#" th:href="@{/add-book}" class="item"><i-->
+<!--            class="fas fa-book"></i><b> Add Book</b> </a>-->
+
+<!--    <a id="book-list" href="#" th:href="@{/books}" class="item"><i-->
+<!--            class="fas fa-book"></i><b> Book List</b> </a>-->
+
+<!--    <a id="issue-book" href="#" th:href="@{/issue-book}" class="item"><i-->
+<!--            class="fas fa-book"></i><b> Issue Book</b> </a>-->
+
+<!--    <a id="issued-books-list" href="#" th:href="@{/list}" class="item"><i-->
+<!--            class="fas fa-book"></i><b> List of Issued Books</b> </a>-->
+
+
+
+
+    <div class="divider"></div>
+</div>
+
+<div class="content mt-5">
+
+    <i onclick="toggleSidebar()" id="sidebar-icon" class="fas fa-bars m-3"  style="color: #dbeed7;"></i>
+    <div th:replace="${content}"></div></div>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+<script th:src="@{/js/script.js}">
+
+</script>
+
+</body>
+</html>

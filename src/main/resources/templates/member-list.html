@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Member List</title>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+<section>
+    <div class="container">
+        <h2>List of Members</h2>
+        <hr/>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Membership Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile Number</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Membership Type</th>
+                <th>Subscribed Date</th>
+                <th>Expiration Date</th>
+                <th>Update</th>
+                <th>Remove Membership</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="member : ${members}">
+                <td th:text="${member.membershipId}"></td>
+                <td th:text="${member.firstName}"></td>
+                <td th:text="${member.lastName}"></td>
+                <td th:text="${member.mobileNumber}"></td>
+                <td th:text="${member.email}"></td>
+                <td th:text="${member.address}"></td>
+                <td th:text="${member.dob}"></td>
+                <td th:text="${member.membershipType}"></td>
+                <td th:text="${member.subscribedDate}"></td>
+                <td th:text="${member.expirationDate}"></td>
+                <td><a th:href="@{/updateMember/{id}(id=${member.memberId})}" class="btn btn-primary">Edit</a></td>
+                <td>
+                    <form th:action="@{/removeMembership}" method="post">
+                        <input type="hidden" name="memberId" th:value="${member.memberId}" />
+                        <input type="submit" value="Remove" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(() => {
+            $(".item").removeClass("active");
+            $("#member-list").addClass("active");
+        })
+    </script>
+</section>
+</body>
+</html>
